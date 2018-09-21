@@ -1,0 +1,45 @@
+// Exercise 1
+SELECT
+    stat.start_time as call_date,
+    clist.TaskRef as task_number,
+    TIMEDIFF( TIME_FORMAT(stat.finish_time, "%H:%i:%s"), TIME_FORMAT(stat.start_time, "%H:%i:%s")) as call_duration,
+    history.reason_notdial as reason_not_dial
+FROM
+    `call_history` history
+LEFT JOIN
+    `stat_naumen` stat
+ON
+    history.id_stat = stat.id
+LEFT JOIN
+    `outgoing_calls_naumen_2015-05` may
+ON
+    may.idStat = stat.id
+LEFT JOIN
+    `outgoing_calls_naumen_2015-06` june
+ON
+    june.idStat = stat.id
+LEFT JOIN
+    call_list clist
+ON
+    history.id_call_list = clist.id
+WHERE
+    history.status = 'Недозвон'
+AND
+    history.reason_notdial IS NOT NULL
+
+// Exercise 2
+SELECT
+    history.id,
+    clist.TaskRef as task_number,
+    history.dt_status as status_datetime,
+    history.status as task_status
+FROM
+     `call_history` history
+LEFT JOIN
+    call_list clist
+ON
+    clist.id = history.id_call_list
+INNER JOIN
+    (SELECT max(id) as maxid from call_history group by id_call_list) as temp
+ON
+    history.id = temp.maxid

@@ -1,0 +1,20 @@
+<?php
+global $lang;
+$lang['main_title'] = 'Древняя HR Биржа';
+$lang['center_title'] = 'IBC Биржа рабов';
+$lang['corporation'] = 'IBC';
+$lang['motto'] = 'Самая большая ценность – это довольный клиент. Поэтому мы работаем на основе индивидуального подхода к каждому клиенту и предлагаем уникальные условия аренды!';
+$lang['dream_slave_button'] = 'Назад';
+$lang['copyright'] = '© 2018 «IBC Биржа рабов»';
+$lang['rent_title'] = 'Аренда выбранного раба';
+$lang['get_slave'] = 'Оформить в рабство';
+$lang['customer_title'] = 'Выбор заказчика';
+$lang['slave_form_title'] = 'Опции аренды';
+$lang['text_starts'] = 'Начало аренды: ';
+$lang['text_expires'] = 'Окончание аренды: ';
+$lang['rent_slave_text'] = 'Имя вашего раба: ';
+$lang['rent_slave_cost_text'] = 'Стоимость вашего раба в час: ';
+$lang['rent_error'] = 'Отсутствуют группы покупателей или рабы';
+$lang['rent_confirm_button'] = 'Оформить аренду';
+$lang['rent_slave_cost_text_total'] = 'Общая стоимость аренды раба: ';
+$lang['rent_slave_text_total'] = 'Общий срок аренды раба: ';
